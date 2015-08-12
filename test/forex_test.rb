@@ -26,20 +26,20 @@ test "if base is GBP and counter is USD, the exchange rate should be 1.5597" do
   assert ExchangeRate.at(@date, 'GBP', 'USD') == 1.5597
 end
 
-test "if base is XXX, the exchange rate should be blank" do
+test "if base is XXX, the exchange rate should be nil" do
   assert ExchangeRate.at(@date, 'XXX', 'USD') == nil
   assert ExchangeRate.at(@date, 'XXX', 'EUR') == nil
 end
 
-test "if counter is XXX, the exchange rate should be blank" do
+test "if counter is XXX, the exchange rate should be nil" do
   assert ExchangeRate.at(@date, 'GBP', 'XXX') == nil
   assert ExchangeRate.at(@date, 'EUR', 'XXX') == nil
 end
 
-test "if date is invalid, the exchange rate should be blank" do
+test "if date is invalid, the exchange rate should be nil" do
   assert ExchangeRate.at('20150-08-11', 'GBP', 'XXX') == nil
   assert ExchangeRate.at('2015-038-11', 'GBP', 'XXX') == nil
   assert ExchangeRate.at('2015-08-112', 'GBP', 'XXX') == nil
-  assert ExchangeRate.at('2015-58-11', 'GBP', 'XXX') == nil
-  assert ExchangeRate.at('2015-08-51', 'GBP', 'XXX') == nil
+  assert ExchangeRate.at('2015-58-11' , 'GBP', 'XXX') == nil
+  assert ExchangeRate.at('2015-08-51' , 'GBP', 'XXX') == nil
 end

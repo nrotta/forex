@@ -3,7 +3,7 @@ require 'nokogiri'
 class ExchangeRate
   def self.at(date, base, counter)
     if base == counter
-      1
+      1.0
     elsif base == 'EUR'
       self.getRateWithEURBase(date, counter)
     elsif counter == 'EUR'
