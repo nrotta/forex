@@ -1,9 +1,6 @@
 require 'cutest'
 require './lib/forex'
 
-# Fixing a date ensures a given exchange rate is used and thus the conversion
-# can be tested. The problem with this approach is that the data from this date
-# should be available for the tests to run
 setup do
   @date = '2015-08-11'
 end

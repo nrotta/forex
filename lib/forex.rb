@@ -20,11 +20,12 @@ class ExchangeRate
     f = File.open(FILE_PATH)
     doc = Nokogiri::XML(f).at_css("[time='#{date}'] [currency='#{currency}']")
     f.close
-    doc['rate'].to_f.round(4) if doc
+    doc['rate'].to_f if doc
   end
 
   def self.getRateWithEURBase(date, currency)
-    self.getRateWithEUR(date, currency)
+    rate = self.getRateWithEUR(date, currency)
+    rate.round(4) if rate
   end
 
   def self.getRateWithEURCounter(date, currency)
