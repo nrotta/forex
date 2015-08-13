@@ -9,5 +9,5 @@ Gem::Specification.new do |s|
   s.email       = 'nicolasrotta@gmail.com'
   s.homepage    = 'http://github.com/nrotta/forex'
   s.license     = 'APACHE'
-  s.files       = ['lib/forex.rb', 'test/forex_test.rb', 'data/forex.xml']
+  s.files       = ['lib/forex.rb', 'test/forex_test.rb']
 end
